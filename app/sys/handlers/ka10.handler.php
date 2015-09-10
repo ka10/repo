@@ -22,9 +22,12 @@
 			"No place to store handlers!\n"
 		;
 
-		$content 	= "<?php\n\tnamespace $name;\n?>";
+		$space 		= str_replace("/", "\\", $name);
+		$content 	= "<?php\n\tnamespace $space;\n?>";
+		$parts 		= explode("/", $name);
+		//$filename	= $parts[count($parts)-1];
+		$file 		= "sys/handlers/$name.php";
 
-		$file 		= "sys/handlers/ka10.$name.php";
 		if (file_exists($file)) return
 			"Handler already exists!"
 		;

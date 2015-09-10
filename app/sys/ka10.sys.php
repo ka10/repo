@@ -153,7 +153,7 @@
 
    	/** Make sure command exists **/
    	if (!function_exists($command)) {
-   		print "Command not found\n";
+   		print "Command not found: $command\n";
    		exit();
    	}
 
